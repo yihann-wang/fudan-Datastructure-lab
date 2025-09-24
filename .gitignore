@@ -1,0 +1,35 @@
+# 编译生成的文件
+*.exe
+*.o
+*.obj
+*.out
+
+# 构建目录
+build/
+output/
+
+# VS Code 配置文件（如果你不想分享IDE配置）
+.vscode/
+
+# 压缩文件
+*.zip
+*.rar
+*.7z
+
+# 临时文件
+*.tmp
+*.temp
+
+# 日志文件
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 调试文件
+*.pdb
+*.ilk
+
+# 特定文件示例（如果你想忽略特定文件）
+# specific_file.txt
