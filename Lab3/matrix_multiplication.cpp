@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 矩阵乘法：计算两个矩阵的乘积并对结果取模
+// 使用优化的循环顺序(i-k-j)来提高缓存命中率
 // 常数模数，用来控制结果范围
 static constexpr long long MOD = 1'000'000'007LL;
 
@@ -40,6 +42,7 @@ int main() {
     }
 
     // 结果矩阵 C = A × B
+    // 使用 i-k-j 循环顺序，当A[i][k]为0时跳过内层循环以提高效率
     vector<vector<long long>> c(n, vector<long long>(m, 0));
     for (int i = 0; i < n; ++i) {
         for (int k = 0; k < p; ++k) {

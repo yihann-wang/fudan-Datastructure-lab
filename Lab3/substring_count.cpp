@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 子串计数：使用KMP算法统计模式串在文本中出现的次数（允许重叠）
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -20,7 +21,7 @@ int main() {
         return 0;
     }
 
-    // 预处理模式串的前缀函数（失败指针）
+    // 预处理模式串的前缀函数（失败指针），用于KMP算法的高效匹配
     vector<int> pi(m, 0);
     for (int i = 1; i < m; ++i) {
         int j = pi[i - 1];
@@ -33,6 +34,7 @@ int main() {
         pi[i] = j;
     }
 
+    // 在文本中搜索模式串，使用KMP算法避免重复比较
     int matches = 0;
     int j = 0;
     for (int i = 0; i < n; ++i) {

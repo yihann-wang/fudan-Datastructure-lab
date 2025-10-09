@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 代码抄袭检测：使用改进的KMP算法，支持变量名替换的模式匹配
+// 大写字母表示关键字/常量（必须完全匹配），小写字母表示变量名（可替换但需保持一致性）
 namespace {
 inline bool isUpper(char ch) {
     // 是否为表示关键字/常量的大写字母
@@ -110,6 +112,7 @@ int main() {
     const vector<int> pi = prefixFunction(pattern, prevPattern);
     const vector<int> prevText = computePrevLower(text);
 
+    // 使用KMP算法在文本中搜索所有匹配的模式串
     long long matches = 0;
     int j = 0;
     for (int i = 0; i < static_cast<int>(text.size()); ++i) {
